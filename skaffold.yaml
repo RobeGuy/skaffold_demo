@@ -12,3 +12,11 @@ deploy:
     manifests:
     - manifests/nginx_deploy.yml
     - manifests/nodeport_service.yml
+test:
+  - image: nginx_hello
+    custom:
+      - command: ./tests/test.sh
+        timeoutSeconds: 10
+        dependencies:
+          paths:
+          -  "tests/test.sh"

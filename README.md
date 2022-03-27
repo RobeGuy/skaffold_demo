@@ -11,7 +11,13 @@
 
 **Initialize and run**
 
-1. `skaffold init` will generate a Skaffold configuration based off of project contents
-2. `skaffold dev` will launch the k8s instance and live tail the logs
+1. `skaffold init` will generate a Skaffold configuration based off of project contents (This is already done for the demo project)
+2. `skaffold dev` will launch the k8s instance with the pipeline and live tail the logs
 3. `curl localhost:30000` will reveal the html file from the nginx web server
 4. Modify the html file and save and observe the instant redeploy from the Skaffold tail
+5. Note the failing unit test and investigate
+
+### Noteworthy follow up items:
+
+- Configuration dependencies for microservices setup: https://skaffold.dev/docs/tutorials/config-dependencies/
+- IDE Plugin for use with debugger: https://skaffold.dev/docs/workflows/debug/
